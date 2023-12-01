@@ -1,0 +1,100 @@
+service: softtek-swapi
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-west-2
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource:
+        - arn:aws:dynamodb:us-west-2:432886635434:table/SwapiVillains
+
+functions:
+  getFilm:
+    handler: src/api/film/handler.getFilm
+    events:
+      - http:
+          path: getFilm/{id}
+          method: get
+
+  getPeople:
+    handler: src/api/people/handler.getPeople
+    events:
+      - http:
+          path: getPeople/{id}
+          method: get
+  
+  getPlanet:
+    handler: src/api/planet/handler.getPlanet
+    events:
+      - http:
+          path: getPlanet/{id}
+          method: get
+  
+  getSpecie:
+    handler: src/api/specie/handler.getSpecie
+    events:
+      - http:
+          path: getSpecie/{id}
+          method: get
+  
+  getStarship:
+    handler: src/api/starship/handler.getStarship
+    events:
+      - http:
+          path: getStarship/{id}
+          method: get
+
+  getVehicle:
+    handler: src/api/vehicle/handler.getVehicle
+    events:
+      - http:
+          path: getVehicle/{id}
+          method: get
+
+  createVillain:
+    handler: src/api/villain/handler.createVillain
+    events:
+      - http:
+          path: villains
+          method: post
+
+  getVillain:
+    handler: src/api/villain/handler.getVillain
+    events:
+      - http:
+          path: villains/{id}
+          method: get
+
+  showActiveVillains:
+    handler: src/api/villain/handler.listActiveVillains
+    events:
+      - http:
+          path: villains/active
+          method: get
+
+  deleteVillain:
+    handler: src/api/villain/handler.deleteVillain
+    events:
+      - http:
+          path: villains/{id}
+          method: patch
+
+resources:
+  Resources:
+    SwapiVillains:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        TableName: SwapiVillains
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 6
+          WriteCapacityUnits: 6
