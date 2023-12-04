@@ -1,3 +1,23 @@
+# Guía de Instalación para el Proyecto Softtek-SWAPI
+# - Esta guía proporciona instrucciones paso a paso para instalar y configurar el proyecto Softtek-SWAPI en tu entorno local.
+
+# Requisitos Previos
+# - Asegúrate de tener instalados los siguientes requisitos previos en tu máquina:
+
+# Node.js: Asegúrate de tener Node.js instalado. Puedes descargar la última versión desde nodejs.org.
+# npm (Administrador de Paquetes de Node.js): npm se instala automáticamente con Node.js. Verifica su instalación ejecutando npm -v en la terminal.
+# Serverless Framework: Instala Serverless Framework globalmente ejecutando el siguiente comando en la terminal:
+# - npm install -g serverless
+# cd <RUTA_DEL_PROYECTO>: - npm install
+
+# Configurar Credenciales de AWS:
+# Puedes hacerlo creando el archivo ~/.aws/credentials y agregando las siguientes claves de acceso:
+# aws_access_key_id=************
+# aws_secret_access_key=**********
+
+# En la raiz del proyecto ejecuta el comando: <RUTA_DEL_PROYECTO> serverless deploy
+# Una vez generadas las nuevas rutas, puedes hacer pruebas de cada endpoint
+
 # Dependencias:
 # aws-sdk (^2.1509.0): SDK de AWS para interactuar con los servicios de Amazon Web Services.
 # axios (^1.6.2): Cliente HTTP para realizar solicitudes a servidores.
