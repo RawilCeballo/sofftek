@@ -1,3 +1,8 @@
+/**
+ * @author Rawil Ceballo <csrawil@hotmail.com>
+ * @description Permite obtener los detalles de un vehiculo a traves de su ID
+ */
+
 const axios = require('axios');
 
 module.exports.getVehicle = async (event) => {

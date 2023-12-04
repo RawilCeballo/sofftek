@@ -1,3 +1,8 @@
+/**
+ * @author Rawil Ceballo <csrawil@hotmail.com>
+ * @description Permite obtener las caracteristicas de una nave a traves de su ID
+ */
+
 const axios = require('axios');
 
 module.exports.getStarship = async (event) => {

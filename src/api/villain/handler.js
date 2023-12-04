@@ -1,3 +1,8 @@
+/**
+ * @author Rawil Ceballo <csrawil@hotmail.com>
+ * @description Implementa los metodos para crear, listar y actualizar el estado de nuevos registros "villanos".
+ */
+
 'use strict';
 
 const AWS = require('aws-sdk');

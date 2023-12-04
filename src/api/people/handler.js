@@ -1,3 +1,8 @@
+/**
+ * @author Rawil Ceballo <csrawil@hotmail.com>
+ * @description Permite obtener los detalles de una persona a traves de su ID
+ */
+
 const axios = require('axios');
 
 module.exports.getPeople = async (event) => {

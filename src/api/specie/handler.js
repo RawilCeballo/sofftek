@@ -1,3 +1,8 @@
+/**
+ * @author Rawil Ceballo <csrawil@hotmail.com>
+ * @description Permite obtener las caracteristicas de una especie a traves de su ID
+ */
+
 const axios = require('axios');
 
 module.exports.getSpecie = async (event) => {
